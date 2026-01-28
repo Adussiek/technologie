@@ -1,0 +1,139 @@
+ 
+/* ===== GLOBAL ===== */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+ 
+/* ===== DARK MODE ===== */
+body.dark-mode {
+  background: #1e1e1e;
+  color: #ddd;
+}
+ 
+body.dark-mode #sidebar,
+body.dark-mode #topbar {
+  background: #2c2c2c;
+  border-color: #444;
+}
+ 
+/* ===== SIDEBAR ===== */
+#sidebar {
+  width: 280px;
+  padding: 15px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  overflow-y: auto;
+}
+ 
+#sidebar h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #007bff;
+}
+ 
+/* ===== PIN ===== */
+.pin {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 6px;
+  align-items: center;
+}
+ 
+.pin b {
+  grid-column: 1 / -1;
+  color: #007bff;
+}
+ 
+/* ===== MAIN ===== */
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* ===== TOPBAR ===== */
+#topbar {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+ 
+#topbar input,
+#topbar select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+ 
+#topbar button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+ 
+.calculate { background: #007bff; color: #fff; }
+.reset { background: #dc3545; color: #fff; }
+#toggleTheme { background: #6c757d; color: #fff; }
+ 
+/* ===== MAP ===== */
+#map {
+  flex: 1;
+  min-height: 300px;
+}
+ 
+/* ===== AUTOCOMPLETE ===== */
+.autocomplete-results {
+  position: absolute;
+  background: #fff;
+  border: 1px solid #ccc;
+  max-height: 40vh;
+  overflow-y: auto;
+  z-index: 2000;
+  width: 100%;
+  border-radius: 6px;
+}
+ 
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+ 
+  #sidebar {
+    width: 100%;
+    max-height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+ 
+  #topbar {
+    grid-template-columns: 1fr 1fr;
+  }
+ 
+  .pin {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+ 
+  #map {
+    min-height: 45vh;
+  }
+}
